@@ -2,6 +2,7 @@
 
 import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import MediaNavbar from './components/SMNavbar';
 import Home from './components/home/Home';
 import Aboutus from './components/pages/Aboutus';
 import Aboutteam from './components/pages/Aboutteam';
@@ -26,6 +27,8 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
+<MediaNavbar/>
+
        <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='about' element={<Aboutus/>}/>
