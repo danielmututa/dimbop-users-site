@@ -97,7 +97,7 @@ const MobileNavbar = () => {
         </div>
 
         {/* Mobile Menu Content */}
-        <div className={`bg-navbar transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-screen' : 'max-h-0'}`}>
+        <div className={`bg-navbar h-screen  transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-screen' : 'max-h-0'}`}>
           <div className="px-4 py-4 space-y-4">
             {/* Home Link */}
             <NavLink 
