@@ -78,20 +78,19 @@ const Home = () => {
       <CarouselContainer>
 
        {/* Prev Button (visible on mobile and md only) */}
+{/* Prev Button */}
 <div
-  className={`absolute left-[-12px] sm:left-[15px] md:left-[20px] top-1/2 transform -translate-y-1/2 cursor-pointer z-20 duration-300 flex items-center justify-center w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full 
-  block lg:hidden
-  ${clickedDirection === 'prev' ? 'bg-white/80 ring-2 ring-white' : 'bg-transparent'}`}
+  className={`absolute left-[-12px] sm:left-[15px] md:left-[-2px] lg:left-[20px] top-1/2 transform -translate-y-1/2 cursor-pointer z-20 duration-300 flex items-center justify-center border-none w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full
+  ${clickedDirection === 'prev' ? 'bg-white/80 ring-2 ring-white' : 'lg:bg-white/50 lg:hover:bg-white/70 bg-transparent'}`}
   onClick={goToPrevious}
 >
   <ChevronLeft className="h-[20px] w-[20px]" color="white" />
 </div>
 
-{/* Next Button (visible on mobile and md only) */}
+{/* Next Button */}
 <div
-  className={`absolute right-[-12px] sm:right-[15px] md:right-[20px] top-1/2 transform -translate-y-1/2 cursor-pointer z-20 duration-300 flex items-center justify-center w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full 
-  block lg:hidden
-  ${clickedDirection === 'next' ? 'bg-white/80 ring-2 ring-white' : 'bg-transparent'}`}
+  className={`absolute right-[-12px] sm:right-[15px] md:right-[-2px] lg:right-[20px] top-1/2 transform -translate-y-1/2 cursor-pointer z-20 duration-300 flex items-center justify-center border-none w-[40px] h-[40px] sm:w-[45px] sm:h-[45px] md:w-[50px] md:h-[50px] rounded-full
+  ${clickedDirection === 'next' ? 'bg-white/80 ring-2 ring-white' : 'lg:bg-white/50 lg:hover:bg-white/70 bg-transparent'}`}
   onClick={goToNext}
 >
   <ChevronRight className="h-[20px] w-[20px]" color="white" />
