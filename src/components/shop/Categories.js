@@ -42,7 +42,7 @@ const Categories = () => {
 
 
   return (
-    <div className="px-5 pb-[50px] pt-[80px] md:px-10 md:pt-[80px] md:pb-[60px] lg:px-20 lg:pt-[100px] lg:pb-[60px] xl:px-[100px] xl:pt-[130px] xl:pb-[80px]">
+    <div className="px-5 pb-[50px] pt-[110px] md:px-10 md:pt-[80px] md:pb-[60px] lg:px-20 lg:pt-[100px] lg:pb-[60px] xl:px-[100px] xl:pt-[130px] xl:pb-[80px]">
     <div className=' pb-[80px]'>
 
         <div className="h-[350px] xl:h-[85vh] overflow-hidden group relative w-full">
@@ -146,23 +146,3 @@ export default Categories
 
 
 
-
-
-
-// import React from 'react';
-
-// const Trapezoid = () => {
-//   return (
-//     <div className="flex justify-center items-center h-screen bg-gray-100">
-//       {/* Trapezoid Div */}
-//       <div
-//         className="w-48 h-32 bg-blue-500"
-//         style={{
-//           clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)',
-//         }}
-//       ></div>
-//     </div>
-//   );
-// };
-
-// export default Trapezoid;

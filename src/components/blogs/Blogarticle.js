@@ -52,11 +52,11 @@ const Blogarticle = () => {
                       </p>
             </div>
 
-            <div className="w-full pt-12  flex justify-between">
-                <img src={iphonebanner} className='w-[45%] h-[500px] object-cover' alt="" />
-                <div className="flex flex-col w-[54%] justify-between">
-                    <img src={iphone} className='h-[243px] object-cover w-full' alt="" />
-                    <img src={iphoneb} className='h-[243px] object-cover w-full' alt="" />
+            <div className="w-full pt-12  flex flex-col md:flex-row justify-between">
+                <img src={iphonebanner} className=' w-full md:w-[45%] h-[300px] md:h-[500px] object-cover' alt="" />
+                <div className="  flex  flex-col w-[54%] justify-between">
+                    <img src={iphone} className='hidden md:block h-[243px] object-cover w-full' alt="" />
+                    <img src={iphoneb} className='hidden md:block h-[243px] object-cover w-full' alt="" />
                 </div>
             </div>
 
