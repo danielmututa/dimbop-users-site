@@ -97,14 +97,15 @@ const media =[
                                 {/* Email Nmae */}
                                 <div className="flex w-full  justify-between">
 
-                                    <div className="flex w-[48%] flex-col gap-1">
-                                        <label htmlFor="" className='font-montserratBold text-[14px]'>Email</label>
-                                        <input type="text" placeholder='Email' className='text-sm md:text-[16px] border w-full p-2 border-buttons font-montserrat outline-none text-body' />
-                                    </div>
 
                                     <div className="flex w-[48%] flex-col gap-1">
                                         <label htmlFor="" className='font-montserratBold text-[14px]'>Name</label>
                                         <input type="text" placeholder='Name' className=' text-sm md:text-[16px] border border-buttons p-2 w-full font-montserrat outline-none text-body' />
+                                    </div>
+
+                                    <div className="flex w-[48%] flex-col gap-1">
+                                        <label htmlFor="" className='font-montserratBold text-[14px]'>Email</label>
+                                        <input type="text" placeholder='Email' className='text-sm md:text-[16px] border w-full p-2 border-buttons font-montserrat outline-none text-body' />
                                     </div>
                                 </div>
                                     
@@ -116,7 +117,7 @@ const media =[
 
                                     {/* Email */}
                                     <div className="flex w-full flex-col gap-1">
-                                        <label htmlFor="" className='font-montserratBold text-[14px]'>Email</label>
+                                        <label htmlFor="" className='font-montserratBold text-[14px]'>Message</label>
                                         <textarea placeholder='Message' className=' text-sm md:text-[16px] border border-buttons p-2 h-[100px] w-full font-montserrat outline-none text-body'  name="" id=""> 
                                     </textarea>
                                     </div>
@@ -134,7 +135,7 @@ const media =[
             </div>
 
             <div className="px-[20px] md:px-[40px] lg:px-[60px]  xl:px-[100px] flex justify-between pb-[50px] md:pb-[60px] xl:pb-[80px]">
-                <img src={map} alt="" />
+                <img src={map} className='h-[250px]  md:h-[300px] lg:h-[400px]  object-cover' alt="" />
             </div>
          
     </div>

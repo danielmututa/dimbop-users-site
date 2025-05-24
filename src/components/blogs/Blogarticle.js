@@ -14,11 +14,11 @@ const Blogarticle = () => {
                 <p className='font-montserratBold text-sm pt-1'>Aisha Khan</p>
             </div>
 
-            <div className="flex flex-col text-center items-center w-[60%] pt-5 justify-center">
+            <div className="flex flex-col text-center items-center w-full xl:w-[60%] pt-5 justify-center">
                 <h2 className='font-montserratBold text-[20px] md:text-[23px] xl:text-[26px] pb-8'>The World of Charles & Ray Eames</h2>
-                <p className='font-montserrat text-sm pb-12'>26 February 2025 </p>
-                <div className="border border-buttons w-1/4 mb-12"></div>
-                <p className='font-montserrat '>
+                <p className='font-montserrat text-sm pb-8 lg:pb-12'>26 February 2025 </p>
+                <div className="border border-buttons w-1/4 mb-8 lg:mb-12"></div>
+                <p className='font-montserrat text-sm md:text-[16px] xl:text-[18px]'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, nemo consequuntur. Facilis dolorum vel illum nesciunt modi atque suscipit. Explicabo temporibus eum nemo optio! Sequi eius at nihil autem neque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, nemo consequuntur. Facilis dolorum vel illum nesciunt modi atque suscipit. Explicabo temporibus eum nemo optio! Sequi eius at nihil autem neque. z
                       </p>
             </div>
@@ -28,20 +28,20 @@ const Blogarticle = () => {
             </div>
 
 
-            <div className="flex flex-col text-center items-center w-[60%] pt-10 justify-center">
-                <p className='font-montserrat pb-5 '> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, velit provident? Id minus dolorum unde, non impedit aliquid, delectus quod officia accusamus distinctio reiciendis recusandae facilis magni, similique est odit.</p>
-                <p className='font-montserrat'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, velit provident? Id minus dolorum unde, non impedit aliquid, delectus quod officia accusamus distinctio reiciendis recusandae facilis magni, similique est odit.</p>
+            <div className="flex flex-col text-center items-center w-full lg:w-[60%] pt-10 justify-center">
+                <p className='font-montserrat text-sm md:text-[16px] xl:text-[18px] pb-5 '> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, velit provident? Id minus dolorum unde, non impedit aliquid, delectus quod officia accusamus distinctio reiciendis recusandae facilis magni, similique est odit.</p>
+                <p className='font-montserrat text-sm md:text-[16px] xl:text-[18px]'> Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, velit provident? Id minus dolorum unde, non impedit aliquid, delectus quod officia accusamus distinctio reiciendis recusandae facilis magni, similique est odit.</p>
             </div>
         
-        <div className="font-montserratBold text-[20px] text-center w-[40%] pt-5">
-            <p className='font-montserrat'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quia illum impedit illo inventore. Quod aspernatur temporibus eum amet itaque voluptates, ipsum hic deserunt ipsa, praesentium asperiores eius est corporis?</p>
+        <div className="font-montserratBold text-[16px] lg:text-[20px] text-center w-full lg:w-[40%] pt-5">
+            <p className='font-montserrat '>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem quia illum impedit illo inventore. Quod aspernatur temporibus eum amet itaque voluptates, ipsum hic deserunt ipsa, praesentium asperiores eius est corporis?</p>
            <div className="flex items-center justify-center gap-1 pt-1">
             <div className="border border-buttons w-[15px]"></div>
            <p className='font-montserrat text-sm'>Emmanuel Ncoche</p>
            </div> 
             </div>
       
-            <div className="flex flex-col text-center items-center w-[60%] pt-12 justify-center">
+            <div className="flex flex-col text-center items-center w-full lg:w-[60%] pt-12 justify-center">
                 
                 <p className='font-montserrat '>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, nemo consequuntur. Facilis dolorum vel illum nesciunt modi atque suscipit. Explicabo temporibus eum nemo optio! Sequi eius at nihil autem neque.
@@ -60,14 +60,14 @@ const Blogarticle = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col text-center items-center w-[60%] pt-12 justify-center">
-               <p className='font-montserrat'>
+            <div className="flex flex-col text-center items-center w-full lg:w-[60%] pt-12 justify-center">
+               <p className='font-montserrat text-sm md:text-[16px] xl:text-[18px]'>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, nemo consequuntur. Facilis dolorum vel illum nesciunt modi atque suscipit. Explicabo temporibus eum nemo optio! Sequi eius at nihil autem neque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, nemo consequuntur. Facilis dolorum vel illum nesciunt modi atque suscipit. Explicabo temporibus eum nemo optio! Sequi eius at nihil autem neque. z
                       </p>
-                      <p className='font-montserrat pt-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam molestias, reiciendis fuga corrupti magni eaque necessitatibus pariatur quos quibusdam. Repellat odit minus possimus placeat a quisquam quos itaque nulla expedita.</p>
-                      <p className='font-montserrat pt-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam molestias, reiciendis fuga corrupti magni eaque necessitatibus pariatur quos quibusdam. </p>
+                      <p className='font-montserrat text-sm md:text-[16px] xl:text-[18px] pt-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam molestias, reiciendis fuga corrupti magni eaque necessitatibus pariatur quos quibusdam. Repellat odit minus possimus placeat a quisquam quos itaque nulla expedita.</p>
+                      <p className='font-montserrat text-sm md:text-[16px] xl:text-[18px] pt-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam molestias, reiciendis fuga corrupti magni eaque necessitatibus pariatur quos quibusdam. </p>
 
-                      <div className="border border-buttons w-1/4 mt-14 mb-12"></div>
+                      <div className="border border-buttons w-1/4 mt-8 md:mt-10 xl:mt-14 mb-6 md:mb-8 xl:mb-12"></div>
 
                       <div className="flex items-center gap-1 justify-between">
                       <Heart className='h-[18px] text-buttons font-montserratBold w-[18px]'/>
@@ -76,8 +76,8 @@ const Blogarticle = () => {
             </div>
 
 
-            <form className="flex justify-end items-end flex-col text-center gap-1 w-[60%] pt-8 mb-20  ">
-              <textarea name="" className='w-full h-[150px] border border-buttons outline-none px-5 pt-[8px] font-montserrat text-buttons' placeholder='write a comment.......'  id=""></textarea> 
+            <form className="flex justify-end items-end flex-col text-center gap-1 w-full xl:w-[60%] pt-8 mb-20  ">
+              <textarea name="" className=' text-sm md:text-[16px] xl:text-[18px]   w-full h-[150px] border border-buttons outline-none px-5 pt-[8px] font-montserrat text-buttons' placeholder='write a comment.......'  id=""></textarea> 
               <button className='font-montserratBold text-buttons text-sm'>POST COMMENT</button>
             </form>
             
