@@ -15,7 +15,8 @@ const Database = [
         search: SearchX,
         shop: ShoppingCart,
         categories: "5G Phones",
-        availability: "Out of Stock"
+        availability: "Out of Stock",
+        message: "This product is currently out of stock. Please check back later or contact support for more information."
     },
     {
         id: 2,
