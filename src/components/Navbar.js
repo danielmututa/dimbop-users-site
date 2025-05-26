@@ -1,9 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Search, ShoppingCart, User } from 'lucide-react';
 import { NavLink,Link } from 'react-router-dom';
+import { useCart } from '../components/shop/CartContext'; // Import useCart
 
 
 const Navbar = () => {
+ 
+const { cartItems } = useCart();
+   
   const [openMenu, setOpenMenu] = useState(null);
   const dropdownRef = useRef(null);
 
@@ -169,19 +173,16 @@ const Navbar = () => {
       <div className="flex justify-between items-center gap-8">
         <Search size={18} className='text-white  hover:text-buttons font-extrabold'/>
         <User size={18} className='text-white  hover:text-buttons font-extrabold'/>
-      <ShoppingCart size={18} className="text-white  hover:text-buttons font-extrabold"/>
+<Link to="/cart" className="flex items-center gap-2">
+          <ShoppingCart size={18} className="text-white hover:text-buttons font-extrabold" />
+          <span className="text-white text-sm font-montserrat">{cartItems.length}</span>
+        </Link>
       </div>
     </div>
   );
 };
 
 export default Navbar;
-
-
-
-
-
-
 
 
 
