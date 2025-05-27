@@ -5,6 +5,7 @@ import { useCart } from "./CartContext"
 import { Minus, Plus, ArrowLeft, ChevronDown } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
+
 const Cartitems = () => {
   const { cartItems, updateQuantity, removeFromCart, getCartTotal } = useCart()
   const [promoCode, setPromoCode] = useState("")
@@ -64,85 +65,94 @@ const Cartitems = () => {
               <span className="text-lg text-gray-600">{cartItems.length} Items</span>
             </div>
 
-            {/* Cart Items Header */}
-            <div className="grid grid-cols-12 gap-4 pb-4 border-b border-gray-200 text-sm font-semibold text-gray-600 uppercase tracking-wide">
-              <div className="col-span-6">Product Details</div>
-              <div className="col-span-2 text-center">Quantity</div>
-              <div className="col-span-2 text-center">Price</div>
-              <div className="col-span-2 text-center">Total</div>
+           
+
+{/* Cart Items Header */}
+<div className="relative overflow-x-auto">
+  <div className="min-w-[600px]"> {/* Set a minimum width to prevent shrinking */}
+    <div className="grid grid-cols-12 gap-4 pb-4 border-b border-gray-200 text-sm font-semibold text-gray-600 uppercase tracking-wide">
+      <div className="col-span-6">Product Details</div>
+      <div className="col-span-2 text-center">Quantity</div>
+      <div className="col-span-2 text-center">Price</div>
+      <div className="col-span-2 text-center">Total</div>
+    </div>
+
+    {/* Cart Items */}
+    <div className="space-y-6 mt-6">
+      {cartItems.map((item) => {
+        const itemPrice =
+          typeof item.price === "string" ? Number.parseFloat(item.price.replace(/[^0-9.]/g, "")) : item.price
+        const itemTotal = itemPrice * item.quantity
+
+        return (
+          <div key={item.id} className="grid grid-cols-12 gap-4 items-center py-4 border-b border-gray-100">
+            {/* Product Details */}
+            <div className="col-span-6 flex items-center space-x-4">
+              <div className="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                <img
+                  src={(() => {
+                    try {
+                      return require("../Images/" + item.img)  || "/placeholder.svg"
+                    } catch (e) {
+                      return "/placeholder.svg?height=80&width=80"
+                    }
+                  })()}
+                  alt={item.type}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-gray-800 truncate">{item.type}</h3>
+                <p className="text-sm text-gray-500 mt-1">{item.name}</p>
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className="text-sm text-red-500 hover:text-red-700 mt-2 font-medium"
+                >
+                  Remove
+                </button>
+              </div>
             </div>
 
-            {/* Cart Items */}
-            <div className="space-y-6 mt-6">
-              {cartItems.map((item) => {
-                const itemPrice =
-                  typeof item.price === "string" ? Number.parseFloat(item.price.replace(/[^0-9.]/g, "")) : item.price
-                const itemTotal = itemPrice * item.quantity
-
-                return (
-                  <div key={item.id} className="grid grid-cols-12 gap-4 items-center py-4 border-b border-gray-100">
-                    {/* Product Details */}
-                    <div className="col-span-6 flex items-center space-x-4">
-                      <div className="w-20 h-20 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
-                        <img
-                          src={(() => {
-                            try {
-                              return require("../Images/" + item.img)  || "/placeholder.svg"
-                            } catch (e) {
-                              return "/placeholder.svg?height=80&width=80"
-                            }
-                          })()}
-                          alt={item.type}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-semibold text-gray-800 truncate">{item.type}</h3>
-                        <p className="text-sm text-gray-500 mt-1">{item.name}</p>
-                        <button
-                          onClick={() => removeFromCart(item.id)}
-                          className="text-sm text-red-500 hover:text-red-700 mt-2 font-medium"
-                        >
-                          Remove
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Quantity */}
-                    <div className="col-span-2 flex items-center justify-center">
-                      <div className="flex items-center border border-gray-300 rounded-lg">
-                        <button
-                          onClick={() => handleQuantityChange(item.id, -1)}
-                          className="p-2 hover:bg-gray-100 transition-colors"
-                          disabled={item.quantity <= 1}
-                        >
-                          <Minus size={16} className={item.quantity <= 1 ? "text-gray-300" : "text-gray-600"} />
-                        </button>
-                        <span className="px-4 py-2 border-x border-gray-300 min-w-[50px] text-center font-medium">
-                          {item.quantity}
-                        </span>
-                        <button
-                          onClick={() => handleQuantityChange(item.id, 1)}
-                          className="p-2 hover:bg-gray-100 transition-colors"
-                        >
-                          <Plus size={16} className="text-gray-600" />
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Price */}
-                    <div className="col-span-2 text-center">
-                      <span className="font-semibold text-gray-800">£{formatPrice(itemPrice)}</span>
-                    </div>
-
-                    {/* Total */}
-                    <div className="col-span-2 text-center">
-                      <span className="font-semibold text-gray-800">£{itemTotal.toFixed(2)}</span>
-                    </div>
-                  </div>
-                )
-              })}
+            {/* Quantity */}
+            <div className="col-span-2 flex items-center justify-center">
+              <div className="flex items-center border border-gray-300 rounded-lg">
+                <button
+                  onClick={() => handleQuantityChange(item.id, -1)}
+                  className="p-2 hover:bg-gray-100 transition-colors"
+                  disabled={item.quantity <= 1}
+                >
+                  <Minus size={16} className={item.quantity <= 1 ? "text-gray-300" : "text-gray-600"} />
+                </button>
+                <span className="px-4 py-2 border-x border-gray-300 min-w-[50px] text-center font-medium">
+                  {item.quantity}
+                </span>
+                <button
+                  onClick={() => handleQuantityChange(item.id, 1)}
+                  className="p-2 hover:bg-gray-100 transition-colors"
+                >
+                  <Plus size={16} className="text-gray-600" />
+                </button>
+              </div>
             </div>
+
+            {/* Price */}
+            <div className="col-span-2 text-center">
+              <span className="font-semibold text-gray-800">£{formatPrice(itemPrice)}</span>
+            </div>
+
+            {/* Total */}
+            <div className="col-span-2 text-center">
+              <span className="font-semibold text-gray-800">£{itemTotal.toFixed(2)}</span>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  </div>
+</div>
+
+
+
 
             {/* Continue Shopping */}
             <div className="mt-8 pt-6 border-t border-gray-200">
@@ -233,7 +243,9 @@ const Cartitems = () => {
             </div>
 
             {/* Checkout Button */}
-            <button className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors">
+            <button 
+            onClick={() => navigate("/bill")}
+            className="w-full bg-blue-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-blue-700 transition-colors">
               CHECKOUT
             </button>
           </div>

@@ -3,9 +3,12 @@
 import { useState } from "react"
 import { Check, CreditCard } from "lucide-react"
 import ZimbabweCitySelector from "./ZimbabweCitySelector"
+import { useNavigate } from "react-router-dom"
 
 export default function PaymentForm() {
+    const navigate = useNavigate()
   const [selectedCity, setSelectedCity] = useState("")
+  
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("ecocash")
   const [formData, setFormData] = useState({
     firstName: "",
@@ -26,11 +29,11 @@ export default function PaymentForm() {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
-  const months = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "0"))
-  const years = Array.from({ length: 10 }, (_, i) => String(new Date().getFullYear() + i))
+//   const months = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "0"))
+//   const years = Array.from({ length: 10 }, (_, i) => String(new Date().getFullYear() + i))
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gray-50 py-14 px-5 sm:py-14 sm:px-5 md:px-10 md:py-16 lg:p-20 xl:p-20">
       <div className="max-w-7xl mx-auto">
         {/* Payment Method Selection */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
@@ -66,8 +69,8 @@ export default function PaymentForm() {
               onClick={() => setSelectedPaymentMethod("paynow")}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="text-2xl font-bold text-blue-600 mb-2">PayNow</div>
-                <span className="text-xs text-gray-600">Singapore PayNow</span>
+                <div className="text-2xl font-bold text-blue-600 mb-2">OneMoney</div>
+                <span className="text-xs text-gray-600">Netone</span>
               </div>
               {selectedPaymentMethod === "paynow" && (
                 <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
@@ -85,8 +88,8 @@ export default function PaymentForm() {
               onClick={() => setSelectedPaymentMethod("paypay")}
             >
               <div className="flex flex-col items-center text-center">
-                <div className="text-xl font-bold text-purple-600 mb-2">PayPay</div>
-                <span className="text-xs text-gray-600">Japan PayPay</span>
+                <div className="text-xl font-bold text-purple-600 mb-2">PayPal</div>
+                <span className="text-xs text-gray-600">Zimbabwe</span>
               </div>
               {selectedPaymentMethod === "paypay" && (
                 <div className="absolute -top-2 -right-2 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
@@ -227,7 +230,9 @@ export default function PaymentForm() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row justify-between items-center mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
-          <button className="w-full sm:w-auto px-6 py-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
+          <button 
+            onClick={() => navigate("/shop")}
+          className="w-full sm:w-auto px-6 py-2 text-gray-600 border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
             RETURN TO STORE
           </button>
 
