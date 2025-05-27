@@ -119,9 +119,10 @@ const Home = () => {
                 </h1>
                 <NavLink
                   className="border-[1px] px-[20px] md:px-[30px] lg:px-[40px] xl:px-[50px] py-[8px] md:py-[10px] xl:py-[12px] font-montserrat relative m-0 xl:h-[60px] flex justify-center items-center cursor-pointer uppercase bg-none border-[#fff] rounded-[0px] text-body font-normal text-14px xl:text-[18px] overflow-hidden transition-all duration-300 hover:animate-[rotate_0.7s_ease-in-out] group"
-                  to=""
+                  to="/shop"
                 >
                   <span className="text-white text-[14px] font-montserratBold font-medium tracking-[0.7px] group-hover:animate-[storm_0.7s_ease-in-out] group-hover:delay-[60ms] flex items-center">
+
                     VIEW MORE
                     <ArrowRight
                       size={28}

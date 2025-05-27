@@ -114,7 +114,7 @@ const { cartItems } = useCart();
               <Search size={18} className="text-white" />
               <User size={18} className="text-white" />
 
-              <Link to="/cart" className='relative'>
+              <Link to="/cart" className='relative'  onClick={() => setIsMenuOpen(false)}>
               <ShoppingCart size={18} className="text-white" />
                <span className="text-white absolute top-0 right-[-6px] text-[8px] font-montserrat">{cartItems.length}</span>
               </Link>

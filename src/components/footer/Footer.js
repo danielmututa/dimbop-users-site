@@ -5,54 +5,70 @@ import { FaRegEnvelopeOpen} from 'react-icons/fa6';
 import { FiFacebook } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Footer = () => {
      
-    // const links = [
-    //     {type:"Navigation", des1:"Home", des2:"Pages" , des3:"Shop" , des4:"Blogs"},
-    //     {type:"Quick Link", des1:"Contact Us", des2:"FAQS" , des3:"Bookings" , des4:"Pages"},
-    //     {type:"Services", des1:"Home", des2:"Contact" , des3:"Blog" , des4:"404"},
-    // ]
+  const navigate = useNavigate();
 
-    // const blinks = [
-    //     {  icon:HiLocationMarker,type:"Lucky Street"},
-    //     {icon:Phone,type:"+263-774006306"},
-    //     {icon: FaRegEnvelopeOpen,type:"type@gmail.com"}
-    // ]
+
+
+  const home = () => {
+    navigate("/")
+  }
+
+
+  const shop = () => {
+    navigate("/shop")
+  }
+
+
+  const blog = () => {
+    navigate("/blog")
+  }
+
+
+  const contact = () => {
+    navigate("/contact")
+  }
+
+  const about = () => {
+    navigate("/about")
+  }
+
+ 
+
+  const faq = () => {
+    navigate("/faq")
+  }
+
+  const whilelist = () => {
+    navigate("/whilelist")
+  }
+
   
-    // const icons = [
-    //     {icon: FiFacebook},
-    //     {icon:FaInstagram},
-    //     {icon:FaXTwitter}
-    // ]
+
+  const categories = () => {
+    navigate("/categories")
+  }
+
+  const blogarticle = () => {
+    navigate("/blogarticle")
+  }
+
+  const services = () => {
+    navigate("/services")
+  }
+  const account = () => {
+    navigate("/account")
+  }
 
 
   return (
     <div className= "flex flex-col justify-between items-center bg-navbar px-5 py-[50px] md:px-[40px] lg:px-[80px] xl:px-[100px]  md:py-[60px] lg:py-[60px] xl:py-[80px]">
-        {/* <div className="flex w-full flex-wrap md:flex-nowrap justify-between">
-
-            <div className="flex  w-[45%] flex-col">
-                <h3 className='font-montserratBold pb-3 text-[18px] text-white'>TechRevive</h3>
-                <p className='sm:text-sm md:text-[15px] lg:text-[16px]  text-white font-montserrat text-[16px]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis esse non volupt!</p>
-            </div>
-
-       <div className="flex w-[68%] justify-between">
-          {
-            links.map((types,index) =>(
-                <div key={index} className=" w-[30%]">
-                 <h3 className='font-montserratBold pb-3 text-[18px text-white '>  {types.type}</h3>
-                 <p className='font-montserrat text-white text-[16px]'>{types.des1}</p>
-                 <p className='font-montserrat text-white text-[16px]'>{types.des2}</p>
-                 <p className='font-montserrat text-white text-[16px]'>{types.des3}</p>
-                 <p className='font-montserrat text-white text-[16px]'>{types.des4}</p>
-                </div>
-            ))
-          }
-       </div>
-            
-        </div> */}
+      
 
 <div className="flex w-full flex-wrap md:flex-nowrap  justify-between md:flex-row ">
     {/* First section - 25% */}
@@ -68,10 +84,10 @@ const Footer = () => {
         
            
                 <h3 className='font-montserratBold pb-2 md:pb-3 text-[18px] text-white'>Navigation</h3>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Home</p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Pages</p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Shop</p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Blogs</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={home} >Home</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={about}>Aboutus</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={shop}>Shop</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={blog}>Blogs</p>
            
      
     </div>
@@ -80,10 +96,10 @@ const Footer = () => {
         
            
                 <h3 className='font-montserratBold pb-2 md:pb-3 text-[18px] text-white'>Quick Link</h3>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Contact Us</p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>FAQS</p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Bookings </p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Pages</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={contact}>Contact Us</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={faq}>FAQS</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={blogarticle}>Blogarticle </p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={account}>Account</p>
            
      
     </div>
@@ -92,12 +108,10 @@ const Footer = () => {
         
            
                 <h3 className='font-montserratBold pb-2 md:pb-3 text-[18px] text-white'>Services</h3>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Home</p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Contact</p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>Blog</p>
-                <p className='font-montserrat text-white text-sm md:text-[16px]'>404</p>
-           
-     
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={home}>Home</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={services}>Services</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={whilelist}>Whilelist</p>
+                <p className='font-montserrat cursor-pointer text-white text-sm md:text-[16px]' onClick={categories}>Categories</p>
     </div>
 </div>
        
