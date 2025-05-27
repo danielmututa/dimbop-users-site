@@ -81,6 +81,7 @@ import Account from "./components/shop/Account"
 import Blog from "./components/blogs/Blog"
 import Blogarticle from "./components/blogs/Blogarticle"
 import Cartitems from "./components/shop/Cartitems"
+import PaymentForm from "./components/payments/PaymentForm"
 
 function App() {
   return (
@@ -104,6 +105,7 @@ function App() {
           <Route path="blog" element={<Blog />} />
           <Route path="blogarticle" element={<Blogarticle />} />
           <Route path="cart" element={<Cartitems />} />
+          <Route path="bill" element={<PaymentForm />} />
         </Routes>
         <Footer />
       </div>
