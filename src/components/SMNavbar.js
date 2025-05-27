@@ -1,75 +1,19 @@
-// import { useState } from 'react';
-
-// const MediaNavbar = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   return (
-//     <nav className="fixed w-full bg-white shadow-md z-50 opacity-95">
-//       <div className="container mx-auto px-4">
-//         <div className="flex justify-between items-center h-16">
-//           {/* Logo */}
-//           <h1 className="text-2xl font-bold">Navbar</h1>
-
-//           {/* Desktop Menu (visible only on lg and xl) */}
-//           <ul className="hidden md:hidden lg:flex space-x-6">
-//             {['Home', 'About', 'Category', 'Menu', 'Testimonial', 'Contact'].map((item) => (
-//               <li key={item}>
-//                 <a href="#" className="text-gray-700 hover:text-green-600 transition-colors">
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-
-//           {/* Mobile Menu Button (visible only on sm and md) */}
-//           <button
-//             className="md:block lg:hidden focus:outline-none"
-//             onClick={() => setIsOpen(!isOpen)}
-//             aria-label="Toggle menu"
-//           >
-//             <div className="w-6 flex flex-col space-y-1.5">
-//               <span className={`h-0.5 w-full bg-gray-800 transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-//               <span className={`h-0.5 w-full bg-gray-800 transition-all ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-//               <span className={`h-0.5 w-full bg-gray-800 transition-all ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-//             </div>
-//           </button>
-//         </div>
-
-//         {/* Mobile Menu (visible only on sm and md) */}
-//         <div
-//           className={`md:block lg:hidden fixed inset-0 bg-white z-40 mt-16 transition-all duration-300 ease-in-out transform ${
-//             isOpen ? 'translate-x-0' : '-translate-x-full'
-//           }`}
-//         >
-//           <ul className="px-4 py-8 space-y-6">
-//             {['Home', 'About', 'Category', 'Menu', 'Testimonial', 'Contact'].map((item) => (
-//               <li key={item}>
-//                 <a
-//                   href="#"
-//                   className="block text-gray-700 hover:text-green-600 text-lg py-2 transition-colors"
-//                   onClick={() => setIsOpen(false)}
-//                 >
-//                   {item}
-//                 </a>
-//               </li>
-//             ))}
-//           </ul>
-//         </div>
-//       </div>
-//     </nav>
-//   );
-// };
-
-// export default MediaNavbar;
-
-
 import React, { useState } from 'react';
 import { ChevronDown, Search, ShoppingCart, User } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
+import { useCart } from '../components/shop/CartContext';
+
+
+
+
+  
+
+
 
 const MobileNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openAccordion, setOpenAccordion] = useState(null);
+const { cartItems } = useCart();
 
   const toggleAccordion = (item) => {
     setOpenAccordion(openAccordion === item ? null : item);
@@ -169,7 +113,11 @@ const MobileNavbar = () => {
             <div className="flex justify-start space-x-6 pt-4">
               <Search size={18} className="text-white" />
               <User size={18} className="text-white" />
+
+              <Link to="/cart" className='relative'>
               <ShoppingCart size={18} className="text-white" />
+               <span className="text-white absolute top-0 right-[-6px] text-[8px] font-montserrat">{cartItems.length}</span>
+              </Link>
             </div>
           </div>
         </div>
