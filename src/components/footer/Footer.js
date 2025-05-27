@@ -152,7 +152,7 @@ const Footer = () => {
 
         <div className='w-full mt-8 border'><span></span></div>
          
-         <p className='text-sm text-white pt-3 md:pt-4 lg:pt-5 xl:pt-6 md:text-[16px] lg:text-[16px] font-montserrat '>@2025 CreativeTech. All Rights Reserved </p>
+         <p className='text-sm text-white pt-3 md:pt-4 lg:pt-5 xl:pt-6 md:text-[16px] lg:text-[16px] font-montserrat '>@2025 Zimnext Solutions. All Rights Reserved </p>
     </div>
   )
 }
