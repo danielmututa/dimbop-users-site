@@ -74,6 +74,7 @@ const Account = () => {
     setIsEditing(false);
   };
 
+  
   const handleSubmiting = (e) => {
     e.preventDefault();
     setIsMyediting(false);
@@ -84,14 +85,14 @@ const Account = () => {
       {/* Mobile Toggle Button */}
       <button 
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="relative top-12 left-4 z-20 p-2 lg:hidden"
+        className="absolute top-[75px] right-4 z-20 p-2 lg:hidden"
       >
         <UserCircle className="w-8 h-8 text-gray-800" />
       </button>
 
       <div className="px-5 md:px-10 lg:px-20 pt-[50px] md:pt-[100px] mb-10 flex flex-col lg:flex-row lg:justify-between">
         {/* Main Content Section */}
-        <div className="w-full lg:w-[62%]">
+        <div className="w-full pt-10 lg:w-[62%]">
           <h2 className='font-montserratBold text-xl md:text-[23px] lg:text-[26px] mb-2 md:mb-3 lg:mb-4'>My Account</h2>
 
           <div className="w-full flex justify-between">
@@ -165,13 +166,11 @@ const Account = () => {
           {/* Close button for mobile */}
           <button 
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute top-4 right-4 p-2 text-white lg:hidden"
-          >
+            className="absolute top-8 right-4 p-2 text-white lg:hidden" >
             <X className="w-6 h-6" />
-          </button>
-
+          </button> 
           <div className="flex flex-col items-center justify-start lg:justify-center h-full pb-20">
-            <div className="flex flex-col pt-8 items-center justify-center">
+            <div className="flex flex-col pt-12 items-center justify-center">
               <img src={user} className='h-[80px] w-[80px] object-cover rounded-full mb-3' alt="" />
               <p className='text-sm md:text-[16px] lg:text-[18px] text-white font-montserratBold'>Natasha Parker</p>
               <p className='text-sm text-white font-montserrat'>parkernatasha09@gmail.com</p>

@@ -1,5 +1,4 @@
 import {   Phone  } from 'lucide-react'
-import React from 'react'
 import {HiLocationMarker} from "react-icons/hi"
 import { FaRegEnvelopeOpen} from 'react-icons/fa6';
 import { FiFacebook } from "react-icons/fi";

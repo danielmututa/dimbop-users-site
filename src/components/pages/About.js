@@ -59,3 +59,4 @@ const cards = [
 }
 
 export default About
+
