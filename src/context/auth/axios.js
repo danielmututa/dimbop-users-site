@@ -1,7 +1,7 @@
 import axios from "axios"
 import { toast } from "react-toastify"
 
-const baseURL = import.meta.env.REACT_APP_BASE_URL || "https://dimpo-pbackend.onrender.com"
+ const baseURL = process.env.REACT_APP_BASE_URL || "https://dimpo-pbackend.onrender.com";
 
 export const apiClient = axios.create({
   baseURL,

@@ -31,13 +31,22 @@ export default function Register() {
       return
     }
     try {
-      await authRegister({
-        username: formData.username,
-        email: formData.email,
-        password: formData.password,
-        confirmpassword: formData.confirmPassword,
-        role: "admin",
-      })
+    //   await authRegister({
+    //     username: formData.username,
+    //     email: formData.email,
+    //     password: formData.password,
+    //     confirmpassword: formData.confirmPassword,
+    //     role: "admin",
+    //   })
+
+    await authRegister({
+  username: formData.username,
+  email: formData.email,
+  password: formData.password,
+  confirmPassword: formData.confirmPassword, // ✅ correct key
+  role: "admin",
+})
+
       navigate("/")
     } catch (error) {
       console.error("Registration error:", error)

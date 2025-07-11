@@ -51,7 +51,8 @@ export const useAuthStore = create((set) => ({
   login: async (email, password) => {
     set({ isLoading: true, error: null })
     try {
-      const baseURL = import.meta.env.REACT_APP_BASE_URL || "https://dimpo-pbackend.onrender.com"
+ const baseURL = process.env.REACT_APP_BASE_URL || "https://dimpo-pbackend.onrender.com";
+
       const response = await fetch(`${baseURL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -93,16 +94,24 @@ export const useAuthStore = create((set) => ({
 
   register: async (userData) => {
     set({ isLoading: true, error: null })
+    // const apiData = {
+    //   username: userData.username,
+    //   email: userData.email,
+    //   password: userData.password,
+    //   confirmPassword: userData.confirmpassword,
+    //   role: "admin",
+    // }
+
     const apiData = {
-      username: userData.username,
-      email: userData.email,
-      password: userData.password,
-      confirmPassword: userData.confirmpassword,
-      role: "admin",
-    }
+  username: userData.username,
+  email: userData.email,
+  password: userData.password,
+  confirmPassword: userData.confirmPassword, // ✅ correct camelCase key
+  role: "admin",
+}
 
     try {
-      const baseURL = import.meta.env.REACT_APP_BASE_URL || "https://dimpo-pbackend.onrender.com"
+ const baseURL = process.env.REACT_APP_BASE_URL || "https://dimpo-pbackend.onrender.com"
       const response = await fetch(`${baseURL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
